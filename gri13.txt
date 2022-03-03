@@ -1,0 +1,15 @@
+ gv=(GridView)findViewById(R.id.gridv);
+        Resources r= getResources();
+        String []s=r.getStringArray(R.array.fruits);
+        ArrayAdapter ad= new ArrayAdapter(this, android.R.layout.simple_list_item_1,s);
+        gv.setAdapter(ad);
+        gv.setOnItemClickListener(this);
+    }
+    @Override
+    public void onItemClick(AdapterView<?>parent, View view,int position,long id){
+        String s=parent.getItemAtPosition(position).toString();
+        Toast t= Toast.makeText(this,"You selected  "+s,Toast.LENGTH_SHORT);
+        t.show();
+
+    }
+}

@@ -1,0 +1,24 @@
+ public void sub(View view){
+        AlertDialog.Builder b=new AlertDialog.Builder(this);
+        b.setIcon(R.mipmap.ic_launcher);
+        b.setMessage("Do you want to exit");
+        b.setTitle("confirm");
+        b.setPositiveButton("yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast t= Toast.makeText(getApplicationContext(),("yes"),Toast.LENGTH_SHORT);
+                t.show();
+            }
+        });
+                b.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast t= Toast.makeText(getApplicationContext(),("No"),Toast.LENGTH_SHORT);
+                        t.show();
+
+                    }
+                });
+                AlertDialog AD=b.create();
+                AD.show();
+    }
+}
